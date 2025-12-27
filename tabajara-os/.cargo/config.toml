@@ -1,0 +1,9 @@
+[unstable]
+build-std = ["core"]
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+target = "16bit_target.json"
+
+[target.16bit_target]
+rustflags = ["-C", "link-arg=-Tlinker_script.ld", "-C", "link-arg=--oformat=binary"]
